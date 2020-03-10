@@ -11,8 +11,8 @@
 * Once a non-admin shell has been obtained on a system, do a netstat and compare it to the nmap scan results. There may be "hidden" (ie. blocked or internally-accessible-only) services that can be accessed and exploited locally or via port forwarding.
 
 
-## [Windows Privilege Escalation](Windows&#32;Privilege&#32;Escalation)
+## [Windows Privilege Escalation](Windows)
 
 
-## [Linux Privilege Escalation](Linux&#32;Privilege&#32;Escalation)
+## [Linux Privilege Escalation](Linux)
 
