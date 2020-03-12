@@ -4,7 +4,7 @@ A collection of commands, scripts, tips, tricks, and other information compiled 
 ## Disclaimer
 This is not intended to be an all-inconclusive document, and should not serve as a substitute for completing the PWK course and/or obtaining the OSCP certification yourself. The author makes no promises that it contains all information required to complete the course and/or obtain the certification.
 
-Additionally, the author provides all information for free without warranty, and assume no responsibility for any damage caused to systems by leveraging the information. It is the responsibility of the reader to abide by all local, state and federal laws while digesting and using the information.
+Additionally, the author provides all information for free without warranty, and assumes no responsibility for any damage caused to any systems by leveraging the information. It is the responsibility of the reader to abide by all local, state and federal laws while digesting and using the information.
 
 Digest and use this at your own risk!!!
 
