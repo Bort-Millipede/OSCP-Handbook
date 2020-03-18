@@ -26,7 +26,7 @@ python3 -m http.server 80
 ```
 
 #### HTTPS
-SimpleHTTPSServer.py script (Python 2 only).
+[SimpleHTTPSServer.py](SimpleHTTPSServer.py) script (Python 2 only).
 
 Requires SSL/TLS certificate (server.pem):
 ```
