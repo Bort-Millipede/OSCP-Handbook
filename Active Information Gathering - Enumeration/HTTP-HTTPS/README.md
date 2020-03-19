@@ -260,7 +260,7 @@ Automatically crawl a list of URLs read from file [FILE_CONTAINING_FULL_URLS].
 ```
 for l in $(cat [FILE_CONTAINING_FULL_URLS]); do curl -L -i -s -k -X 'GET' "$l" >/dev/null; done
 ```
-Proxying this command through Burp Suite using the ```http_proxy`` and ```https_proxy``` environment variables is highly recommended.
+Proxying this command through Burp Suite using the ```http_proxy``` and ```https_proxy``` environment variables is highly recommended.
 
 ### Nmap scripts
 * http-sql-injection: Spiders an HTTP server looking for URLs containing queries vulnerable to an SQL injection attack
