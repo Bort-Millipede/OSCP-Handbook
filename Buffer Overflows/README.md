@@ -12,19 +12,19 @@
 
 ## Generic procedure (Windows or Linux)
 * Identify vulnerable input field and payload length that causes overflow (Fuzzing)
-* Calculate offsets
-* Calculate bad characters
-* Identify jump instruction and jump address
+* Identify offsets
+* Detect bad characters
+* Identify jump instruction opcode and usable return address
 * Generate shellcode
 * Exploit!
 
 
 ## Buffer Overflow Tips
-* 0x00 is usually a bad character, because it serves as a string terminator in programming languages vulnerable to buffer overflows (C/C++).
+* 0x00 is usually a bad character, because it often serves as a string terminator in programming languages vulnerable to buffer overflows (C/C++).
 * Return Addresses CANNOT contain bad characters (which is why the Return Address is identified after detecting bad characters).
 * Confusing debugger errors encountered during bad character detection likely indicate a bad character.
 * Shellcode will almost always be generated with the ```EXITFUNC=thread``` option.
-* Some vulnerable programs/services will crash from buffer overflows, regardless of how much preparation is done during exploit development.
+* Some vulnerable programs/services will always crash from buffer overflow conditions, regardless of how much preparation/compensation is done during exploit development.
 
 
 ## pattern_create.rb
@@ -34,13 +34,13 @@ Provided by the Metasploit Framework. Create unique pattern payloads to detect r
 ```
 
 ## pattern_offset.rb
-Provided by the Metasploit Framework. Identify exact offsets where unique patterns reside
+Provided by the Metasploit Framework. Identify exact offsets where unique patterns reside.
 ```
 /usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -q [VALUE] -l [PAYLOAD_LENGTH]
 ```
 
 ## nasm_shell.rb
-Provided by the Metasploit Framework. Convert Assembly Language instructions into corresponding hexadecimal opcodes
+Provided by the Metasploit Framework. Convert x86 Assembly Language instructions into corresponding hexadecimal opcodes.
 ```
 /usr/share/metasploit-framework/tools/exploit/nasm_shell.rb
 ```
@@ -74,6 +74,7 @@ badchars = ("\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x1
 * Click displayed memory address
 * Press F2
 * If warning message is displayed, click Yes
+* Breakpoint is set when memory address is highlighted in Blue.
 
 ### Search for module information in Immunity Debugger
 ```
@@ -89,5 +90,5 @@ badchars = ("\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x1
 ```
 "[STRING]"[::-1].encode('hex').upper()
 ```
-Can be useful for printing values in buffer overflow exploits.
+Can be useful for printing string-to-hexadecimal values in Windows buffer overflow exploits.
 

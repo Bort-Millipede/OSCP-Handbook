@@ -7,12 +7,12 @@
 
 
 ## Tips
-* Make sure low-privilege shell is fully interactive with command: ```python -c 'import pty; pty.spawn("/bin/bash")'```
+* Make sure low-privilege shell is fully interactive with command: ```python -c 'import pty;pty.spawn("/bin/bash")'```
 * check PATH variable and ensure it is set "properly" (isn't mostly empty). If PATH looks strange, set it to something more "normal"
 * check for sudo privileges (usually requires user password): ```sudo -l```
 * Try logging in using different creds discovered for the same system: different accounts may have sudo privileges.
-* Get the list of users from /etc/passwd and attempt username:password (ie admin:admin) brute-force attack via adjacent protocols (manually-created non-root users start at id 1000)
-* For local exploits that need to be compiled, ALWAYS compile them on the target system unless compilation tools are not installed/available on the system.
+* Get the list of users from /etc/passwd and attempt username:password (ie admin:admin) brute-force attack via adjacent protocols (manually-created non-root users start at id 1000).
+* For local exploits that need to be compiled, ALWAYS try compiling them on the target system first. If compilation tools are not installed/available on the target system, compile them locally.
 
 
 ## Notable Local Exploits
@@ -150,4 +150,19 @@ ls -aRl /etc/ | awk '$1 ~ /w.$/' 2>/dev/null
 find / -perm -u=s -type f 2>/dev/null
 ```
 
+## Exploitation
+
+### [uidgid0.c](uidgid0.c)
+Small executable for obtaining root group privileges (when current shell is running as root user but not root group: ```uid=0(root) gid=33(www-data)```).
+
+#### Compiling
+```
+gcc -o uidgid0 uidgid0.c
+```
+
+#### Executing (on target system)
+```
+chmod +x uidgid0
+./uidgid0
+```
 
