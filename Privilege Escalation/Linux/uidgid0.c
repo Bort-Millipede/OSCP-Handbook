@@ -4,6 +4,6 @@
 int main(void) {
 	setuid(0);
 	setgid(0);
-	char *args[] = {"/bin/bash","-i"}
+	char *args[] = {"/bin/bash","-i"};
 	execvp(args[0],args);
 }

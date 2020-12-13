@@ -104,14 +104,14 @@ find / -perm -o x -type d 2>/dev/null
 find / \( -perm -o w -perm -o x \) -type d 2>/dev/null
 ```
 
-### Search filesystem for clear-text passwords in files
+### Search filesystem for cleartext passwords in files
 ```
 grep -i user [filename]
 grep -i pass [filename]
 grep -C 5 "password" [filename]
 ```
 
-#### Search specifically for Joomla files containing clear-text passwords
+#### Search specifically for Joomla files containing cleartext passwords
 ```
 find . -name "*.php" -print0 | xargs -0 grep -i -n "var $password"
 ```

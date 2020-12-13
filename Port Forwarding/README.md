@@ -48,7 +48,7 @@ proxychains [COMMAND] [COMMAND_ARGS]
 
 
 ## httptunnel
-Forward all traffic to a remote host/port encapsulated in clear-text HTTP. Includes both a server and a client component
+Forward all traffic to a remote host/port encapsulated in cleartext HTTP. Includes both a server and a client component
 
 ### Execute server component to accept HTTP connections from clients on LOCAL_PORT and forward all traffic to [REMOTE_HOST]:[REMOTE_PORT] on any protocol
 ```
